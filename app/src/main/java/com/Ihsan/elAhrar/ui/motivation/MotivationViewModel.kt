@@ -1,4 +1,4 @@
-package com.Ihsan.elAhrar.ui.dashboard
+package com.Ihsan.elAhrar.ui.motivation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.Ihsan.elAhrar.ui.dashboard
+package com.Ihsan.elAhrar.ui.motivation
 
 import android.os.Bundle
 import android.view.LayoutInflater

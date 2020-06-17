@@ -1,4 +1,4 @@
-package com.Ihsan.elAhrar.ui.notifications
+package com.Ihsan.elAhrar.ui.statistics
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.Ihsan.elAhrar.R
 
-class NotificationsFragment : Fragment() {
+class StatisticsFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
+    private lateinit var statisticsViewModel: StatisticsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
-            ViewModelProviders.of(this).get(NotificationsViewModel::class.java)
+        statisticsViewModel =
+            ViewModelProviders.of(this).get(StatisticsViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_statistics, container, false)
         val textView: TextView = root.findViewById(R.id.text_notifications)
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
+        statisticsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
