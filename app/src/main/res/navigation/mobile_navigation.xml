@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_overview">
+
+    <fragment
+        android:id="@+id/navigation_overview"
+        android:name="com.Ihsan.elAhrar.ui.home.HomeFragment"
+        android:label="@string/title_overview"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_motivation"
+        android:name="com.Ihsan.elAhrar.ui.dashboard.DashboardFragment"
+        android:label="@string/title_motivation"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_statistics"
+        android:name="com.Ihsan.elAhrar.ui.notifications.NotificationsFragment"
+        android:label="@string/title_statistics"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/trophies"
+        android:name="com.Ihsan.elAhrar.ui.trophies.Trophies"
+        android:label="trophies_fragment"
+        tools:layout="@layout/trophies_fragment" />
+</navigation>

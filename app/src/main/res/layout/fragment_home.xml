@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_light2"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:logo="@drawable/ic_baseline_arrow_back_24"
+        app:title="habit name"
+        app:titleMarginStart="50dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="overview"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/black1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/More"
+                    android:layout_width="80dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentEnd="true"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_more" />
+
+                <com.github.lzyzsd.circleprogress.ArcProgress
+                    android:id="@+id/arc_progress"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    app:arc_angle="255"
+                    app:arc_bottom_text="MEMORY"
+                    app:arc_finished_color="@color/main"
+                    app:arc_progress="55"
+                    app:arc_stroke_width="10dp"
+                    app:arc_text_color="@color/main"
+                    app:arc_unfinished_color="@color/gray_light2" />
+
+                <TextView
+                    android:id="@+id/MotivationTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/arc_progress"
+                    android:layout_centerHorizontal="true"
+                    android:text="gooooooooooo"
+                    android:textAlignment="center"
+                    android:textColor="@color/gray"
+                    android:textSize="20sp" />
+
+                <View
+                    android:id="@+id/v"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/MotivationTxt"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/gray_light2" />
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/v"
+                    android:layout_centerHorizontal="true"
+                    android:text="timer"
+                    android:textAlignment="center"
+                    android:textColor="@color/gray_light" />
+
+                <TextView
+                    android:id="@+id/Timer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="10hr 30m 21s"
+                    android:textAlignment="center"
+                    android:textColor="@color/black1"
+                    android:textSize="25sp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/calendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="calendar"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/black1" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>
