@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_overview"
-        android:name="com.Ihsan.elAhrar.ui.home.HomeFragment"
+        android:name="com.Ihsan.elAhrar.ui.overview.OverviewFragment"
         android:label="@string/title_overview"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_overview" />
 
     <fragment
         android:id="@+id/navigation_motivation"
-        android:name="com.Ihsan.elAhrar.ui.dashboard.DashboardFragment"
+        android:name="com.Ihsan.elAhrar.ui.dashboard.MotivationFragment"
         android:label="@string/title_motivation"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_motivation" />
 
     <fragment
         android:id="@+id/navigation_statistics"
         android:name="com.Ihsan.elAhrar.ui.notifications.NotificationsFragment"
         android:label="@string/title_statistics"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_statistics" />
 
     <fragment
-        android:id="@+id/trophies"
+        android:id="@+id/navigation_trophies"
         android:name="com.Ihsan.elAhrar.ui.trophies.Trophies"
         android:label="trophies_fragment"
-        tools:layout="@layout/trophies_fragment" />
+        tools:layout="@layout/fragment_trophies" />
 </navigation>

@@ -6,15 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/gray_light2"
     android:orientation="vertical"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.overview.OverviewFragment">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:logo="@drawable/ic_baseline_arrow_back_24"
-        app:title="habit name"
-        app:titleMarginStart="50dp" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -117,6 +110,44 @@
                 android:text="calendar"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/black1" />
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/rounded_solid_red"
+                android:orientation="horizontal"
+                android:paddingLeft="33dp"
+                android:paddingTop="12dp"
+                android:paddingRight="33dp"
+                android:paddingBottom="12dp">
+
+                <ImageView
+                    android:id="@+id/Reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/ic_reset" />
+
+                <TextView
+                    android:id="@+id/okDialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reset"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
 

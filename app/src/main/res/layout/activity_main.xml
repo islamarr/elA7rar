@@ -80,7 +80,7 @@
         app:fabCustomSize="70dp"
         android:clickable="true"
         android:backgroundTint="@color/main"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        android:src="@drawable/ic_baseline_add_24" />
 
     <LinearLayout
         android:layout_width="match_parent"

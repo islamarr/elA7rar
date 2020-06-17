@@ -1,4 +1,4 @@
-package com.Ihsan.elAhrar.ui.notifications
+package com.Ihsan.elAhrar.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.Ihsan.elAhrar.R
 
-class NotificationsFragment : Fragment() {
+class MotivationFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
+    private lateinit var motivationViewModel: MotivationViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
-            ViewModelProviders.of(this).get(NotificationsViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_statistics, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
+        motivationViewModel =
+            ViewModelProviders.of(this).get(MotivationViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_motivation, container, false)
+        val textView: TextView = root.findViewById(R.id.text_dashboard)
+        motivationViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

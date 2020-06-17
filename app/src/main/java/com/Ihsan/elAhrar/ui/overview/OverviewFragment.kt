@@ -1,4 +1,4 @@
-package com.Ihsan.elAhrar.ui.dashboard
+package com.Ihsan.elAhrar.ui.overview
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.Ihsan.elAhrar.R
 
-class DashboardFragment : Fragment() {
+class OverviewFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var overviewViewModel: OverviewViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-            ViewModelProviders.of(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        overviewViewModel =
+            ViewModelProviders.of(this).get(OverviewViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_overview, container, false)
+        val textView: TextView = root.findViewById(R.id.text_input_password_toggle)
+        overviewViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
