@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.Ihsan.elAhrar.R
 
-class Trophies : Fragment() {
+class TrophiesFragment : Fragment() {
 
     companion object {
-        fun newInstance() = Trophies()
+        fun newInstance() = TrophiesFragment()
     }
 
     private lateinit var viewModel: TrophiesViewModel
