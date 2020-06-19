@@ -22,10 +22,10 @@ class OverviewFragment : Fragment() {
         overviewViewModel =
             ViewModelProviders.of(this).get(OverviewViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_overview, container, false)
-        val textView: TextView = root.findViewById(R.id.text_input_password_toggle)
+       /* val textView: TextView = root.findViewById(R.id.text_input_password_toggle)
         overviewViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
-        })
+        })*/
         return root
     }
 }

@@ -22,10 +22,10 @@ class MotivationFragment : Fragment() {
         motivationViewModel =
             ViewModelProviders.of(this).get(MotivationViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_motivation, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
+        /*val textView: TextView = root.findViewById(R.id.)
         motivationViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
-        })
+        })*/
         return root
     }
 }
