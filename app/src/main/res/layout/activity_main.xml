@@ -38,7 +38,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_toEndOf="@+id/More"
-                android:text="TextView"
+                android:text="حكمة اليوم"
                 android:textAlignment="viewEnd"
                 android:textSize="24sp" />
 
@@ -51,6 +51,7 @@
                 android:layout_marginEnd="20dp"
                 android:text="TextView"
                 android:textAlignment="viewEnd"
+                android:textColor="@color/black1"
                 android:textSize="20sp" />
 
             <TextView
@@ -93,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
-            android:text="TextView"
+            android:text="سوف أقلع عن"
             android:textAlignment="viewEnd" />
 
 
