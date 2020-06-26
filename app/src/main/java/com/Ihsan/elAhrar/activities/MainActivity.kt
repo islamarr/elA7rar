@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         addHabitBtn.setOnClickListener {
-            //startActivity(Intent(this, HabitDetails::class.java))
+            startActivity(Intent(this, CreateHabit::class.java))
 
-            habitDao = ElAhrarDataBase.invoke(this).HabitDao()
+         //   habitDao = ElAhrarDataBase.invoke(this).HabitDao()
 
-            habitDao.addHabit(UnitHabit("eee","rrrrrr",22,21,21,3443434,"rrr","eee"))
+         //   habitDao.addHabit(UnitHabit("eee","rrrrrr",22,21,21,3443434,"rrr","eee"))
 
         }
 
