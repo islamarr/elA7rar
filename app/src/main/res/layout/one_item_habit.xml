@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -37,19 +37,19 @@
                     android:src="@drawable/ic_more" />
 
                 <TextView
-                    android:id="@+id/Quote"
+                    android:id="@+id/habitName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|end"
                     android:layout_weight="1"
                     android:layout_marginEnd="20dp"
-                    android:text="TextView"
+                    android:text="الاسم"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/black1"
                     android:textSize="20sp" />
 
                 <ImageView
-                    android:id="@+id/Logo"
+                    android:id="@+id/habitIcon"
                     android:layout_gravity="center_vertical|end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -80,13 +80,13 @@
                 android:layout_alignParentEnd="true"
                 android:layout_gravity="center_vertical|end"
                 android:layout_toEndOf="@+id/arc_progress"
-                android:text="TextView"
+                android:text="الوقت الذي مر"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/gray"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/Timer"
+                android:id="@+id/habitTimer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txt1"

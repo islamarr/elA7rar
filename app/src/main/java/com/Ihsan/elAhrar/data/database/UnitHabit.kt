@@ -8,21 +8,21 @@ import androidx.room.PrimaryKey
 data class UnitHabit(
 
     @ColumnInfo(name = "name")
-    var name: String?,
+    var name: String? = null,
     @ColumnInfo(name = "type")
-    var type: String?,
+    var type: String? = null,
     @ColumnInfo(name = "icon")
-    var icon: Int?,
+    var icon: Int? = 0,
     @ColumnInfo(name = "savedTime")
-    var savedTime: Int?,
+    var savedTime: Int? = 0,
     @ColumnInfo(name = "savedMoney")
-    var savedMoney: Int?,
+    var savedMoney: Int? = 0,
     @ColumnInfo(name = "startDate")
-    var startDate: Long?,
+    var startDate: Long? = 0,
     @ColumnInfo(name = "resetDate")
-    var resetDate: String?,
+    var resetDate: String? = null,
     @ColumnInfo(name = "reasons")
-    var reasons: String?
+    var reasons: String? = null
 ) {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0

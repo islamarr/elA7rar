@@ -58,7 +58,7 @@ class Splash : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
 
             finish()
-        }, 500)
+        }, 100)
     }
 
     override fun onPause() {
