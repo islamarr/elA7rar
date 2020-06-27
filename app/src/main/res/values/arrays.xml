@@ -1,12 +1,75 @@
 <resources>
-    <!-- Reply Preference -->
-    <string-array name="reply_entries">
-        <item>Reply</item>
-        <item>Reply to all</item>
+
+    <string-array name="levels_timer">
+
+        <item>تم</item>
+        <item>24 ساعة</item>
+        <item>يومان</item>
+        <item>3 أيام</item>
+        <item>5 أيام</item>
+        <item>أسبوع</item>
+        <item>10 أيام</item>
+        <item>أسبوعان</item>
+        <item>18 يوم</item>
+        <item>22 يوم</item>
+        <item>26 يوم</item>
+        <item>30 يوم</item>
+        <item>35 يوم</item>
+        <item>40 يوم</item>
+        <item>45 يوم</item>
+        <item>50 يوم</item>
+        <item>60 يوم</item>
+        <item>70 يوم</item>
+        <item>80 يوم</item>
+        <item>100 يوم</item>
+        <item>120 يوم</item>
+        <item>150 يوم</item>
+        <item>200 يوم</item>
+        <item>250 يوم</item>
+        <item>300 يوم</item>
+        <item>365 يوم</item>
+        <item>550 يوم</item>
+        <item>سنتان</item>
+        <item>3 سنوات</item>
+        <item>4 سنوات</item>
+        <item>5 سنوات</item>
+
     </string-array>
 
-    <string-array name="reply_values">
-        <item>reply</item>
-        <item>reply_all</item>
+    <string-array name="levels_timeInMilliSec">
+
+        <item>0</item>
+        <item>86400</item>
+        <item>172800</item>
+        <item>259200</item>
+        <item>432000</item>
+        <item>604800</item>
+        <item>864000</item>
+        <item>1209600</item>
+        <item>1555200</item>
+        <item>1900800</item>
+        <item>2246400</item>
+        <item>2592000</item>
+        <item>3024000</item>
+        <item>3456000</item>
+        <item>3888000</item>
+        <item>4320000</item>
+        <item>5184000</item>
+        <item>6048000</item>
+        <item>6912000</item>
+        <item>8640000</item>
+        <item>10368000</item>
+        <item>12960000</item>
+        <item>17280000</item>
+        <item>21600000</item>
+        <item>25920000</item>
+        <item>31536000</item>
+        <item>47520000</item>
+        <item>63072000</item>
+        <item>94608000</item>
+        <item>126144000</item>
+        <item>157680000</item>
+
     </string-array>
+
 </resources>
