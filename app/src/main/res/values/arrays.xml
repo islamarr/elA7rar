@@ -36,7 +36,7 @@
 
     </string-array>
 
-    <string-array name="levels_timeInMilliSec">
+    <integer-array name="levels_timeInMilliSec">
 
         <item>0</item>
         <item>86400</item>
@@ -70,6 +70,6 @@
         <item>126144000</item>
         <item>157680000</item>
 
-    </string-array>
+    </integer-array>
 
 </resources>

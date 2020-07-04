@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         habitRecycler.layoutManager = LinearLayoutManager(this)
-        habitAdapter = HabitAdapter(listOf(), habitViewModel)
+        val levels = resources.getIntArray(R.array.levels_timeInMilliSec).toList()
+        habitAdapter = HabitAdapter(this, listOf(), habitViewModel)
         habitRecycler.adapter = habitAdapter
 
         habitViewModel.getmAllHabits().observe(this, Observer {
@@ -72,5 +73,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
         popupMenu.show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        habitAdapter.removeHandler()
     }
 }

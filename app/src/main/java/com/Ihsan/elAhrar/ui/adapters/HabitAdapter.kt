@@ -1,5 +1,7 @@
 package com.Ihsan.elAhrar.ui.adapters
 
+import android.content.Context
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,12 +9,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.Ihsan.elAhrar.R
 import com.Ihsan.elAhrar.data.HabitViewModel
 import com.Ihsan.elAhrar.data.database.UnitHabit
+import com.Ihsan.elAhrar.utils.Levels
+import com.Ihsan.elAhrar.utils.Utils
 import kotlinx.android.synthetic.main.one_item_habit.view.*
-import java.util.concurrent.TimeUnit
 
-class HabitAdapter(var habitList: List<UnitHabit>, val habitViewModel: HabitViewModel) :
+class HabitAdapter(
+    var context: Context,
+    var habitList: List<UnitHabit>,
+    private val habitViewModel: HabitViewModel
+) : RecyclerView.Adapter<HabitAdapter.MyViewHolder>() {
 
-    RecyclerView.Adapter<HabitAdapter.MyViewHolder>() {
+    val handler = Handler()
+    private lateinit var runnable: Runnable
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
@@ -26,22 +34,38 @@ class HabitAdapter(var habitList: List<UnitHabit>, val habitViewModel: HabitView
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.habitName.text = habitList[position].name
-        holder.habitTimer.text = formatCounter(habitList[position].startDate)
         holder.More.setOnClickListener {
             habitViewModel.deleteOne(habitList[position])
         }
-    }
 
-    private fun formatCounter(timeInMS: Long?): String {
-        return String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(timeInMS!!),
-            TimeUnit.MILLISECONDS.toMinutes(timeInMS) % TimeUnit.HOURS.toMinutes(1),
-            TimeUnit.MILLISECONDS.toSeconds(timeInMS) % TimeUnit.MINUTES.toSeconds(1))
+        runnable = object : Runnable {
+            override fun run() {
+                val nextLevel = Levels.getNextLevel(context, System.currentTimeMillis() - habitList[position].startDate!!)
+                val passedTime = (System.currentTimeMillis() - habitList[position].startDate!!).toInt()
+
+                holder.habitProgress.progress = passedTime / nextLevel
+                holder.habitProgress.bottomText = Levels.getNextLevelIndex(context, nextLevel.toLong())
+
+                holder.habitTimer.text = Utils.getRemainingtimeStr(Utils.getRemainingtime(System.currentTimeMillis() - habitList[position].startDate!!))
+
+                handler.postDelayed(this, 1000)
+            }
+        }
+        runnable.run()
+
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var habitTimer = itemView.habitTimer
         var habitIcon = itemView.habitIcon
         var habitName = itemView.habitName
+        var habitProgress = itemView.habitProgress
         var More = itemView.More
     }
+
+    fun removeHandler(){
+        handler.removeCallbacks(runnable)
+    }
+
+
 }
