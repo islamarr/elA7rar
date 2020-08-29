@@ -10,7 +10,10 @@ interface HabitDao {
     fun addHabit(unitHabit: UnitHabit)
 
     @Query("select * from habit")
-    fun getUnitHabit(): LiveData<List<UnitHabit>>
+    fun getAllHabits(): LiveData<List<UnitHabit>>
+
+    @Query("select * from habit where id = :Id")
+    fun getHabit(Id: Int): LiveData<UnitHabit>
 
     @Delete
     fun deleteOne(unitHabit: UnitHabit)

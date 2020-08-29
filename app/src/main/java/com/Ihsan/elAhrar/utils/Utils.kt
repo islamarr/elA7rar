@@ -24,7 +24,7 @@ object Utils {
     }
 
     fun getRemainingtimeStr(remainingTime: RemainingTime): String{
-        return "${remainingTime.days} : ${remainingTime.hours} : ${remainingTime.minutes} : ${remainingTime.seconds}"
+        return "${remainingTime.days} day ${remainingTime.hours} h ${remainingTime.minutes} m ${remainingTime.seconds} s"
     }
 
     fun getDayOfYear(): Int {

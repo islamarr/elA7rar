@@ -1,20 +1,30 @@
 package com.Ihsan.elAhrar.activities
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.Ihsan.elAhrar.R
+import com.Ihsan.elAhrar.data.HabitViewModel
 import kotlinx.android.synthetic.main.activity_habit_details.*
 
 class HabitDetails : AppCompatActivity() {
 
+    private val habitViewModel: HabitViewModel by viewModels()
+    private val TAG = "HabitDetails"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_habit_details)
+
+        var intent = getIntent()
+        if (intent != null) {
+            var id = intent.getIntExtra("id", -1)
+            habitViewModel.getmHabit(id).observe(this, Observer {
+                habitName.setTitle(it.name)
+            })
+        }
 
         val navController = findNavController(R.id.nav_host_fragment)
 
@@ -37,12 +47,12 @@ class HabitDetails : AppCompatActivity() {
             return@setOnNavigationItemSelectedListener true
         }
 
-       /* val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_overview, R.id.navigation_motivation, R.id.navigation_statistics, R.id.navigation_trophies
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        bottomNavigation.setupWithNavController(navController)*/
+        /* val appBarConfiguration = AppBarConfiguration(
+             setOf(
+                 R.id.navigation_overview, R.id.navigation_motivation, R.id.navigation_statistics, R.id.navigation_trophies
+             )
+         )
+         setupActionBarWithNavController(navController, appBarConfiguration)
+         bottomNavigation.setupWithNavController(navController)*/
     }
 }

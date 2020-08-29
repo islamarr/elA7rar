@@ -9,15 +9,17 @@ import com.Ihsan.elAhrar.data.database.UnitHabit
 class HabitRepository(context: Context?) {
     private val habitDao: HabitDao
 
-    val mAllHabits: LiveData<List<UnitHabit>>
 
     init {
         habitDao = ElAhrarDataBase.invoke(context!!).HabitDao()
-        mAllHabits = habitDao.getUnitHabit()
     }
 
     fun getAllHabits(): LiveData<List<UnitHabit>> {
-        return mAllHabits
+        return habitDao.getAllHabits()
+    }
+
+    fun getmHabit(id: Int): LiveData<UnitHabit> {
+        return habitDao.getHabit(id)
     }
 
     fun insert(habit: UnitHabit?) {

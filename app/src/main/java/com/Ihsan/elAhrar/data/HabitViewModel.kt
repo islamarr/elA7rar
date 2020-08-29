@@ -7,9 +7,9 @@ import com.Ihsan.elAhrar.data.database.UnitHabit
 
 class HabitViewModel(application: Application?) : AndroidViewModel(application!!) {
     private val mRepository: HabitRepository = HabitRepository(application)
-    private val mAllHabits: LiveData<List<UnitHabit>>
+
     fun getmAllHabits(): LiveData<List<UnitHabit>> {
-        return mAllHabits
+        return mRepository.getAllHabits()
     }
 
     fun insert(unitHabit: UnitHabit?) {
@@ -20,7 +20,8 @@ class HabitViewModel(application: Application?) : AndroidViewModel(application!!
         mRepository.deleteOne(unitHabit)
     }
 
-    init {
-        mAllHabits = mRepository.getAllHabits()
+    fun getmHabit(id: Int): LiveData<UnitHabit> {
+        return mRepository.getmHabit(id)
     }
+
 }

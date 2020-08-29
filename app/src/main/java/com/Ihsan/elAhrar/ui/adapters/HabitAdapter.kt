@@ -1,12 +1,14 @@
 package com.Ihsan.elAhrar.ui.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.Ihsan.elAhrar.R
+import com.Ihsan.elAhrar.activities.HabitDetails
 import com.Ihsan.elAhrar.data.HabitViewModel
 import com.Ihsan.elAhrar.data.database.UnitHabit
 import com.Ihsan.elAhrar.utils.Levels
@@ -38,15 +40,30 @@ class HabitAdapter(
             habitViewModel.deleteOne(habitList[position])
         }
 
+        holder.cardView.setOnClickListener {
+            context.startActivity(
+                Intent(context, HabitDetails::class.java).putExtra(
+                    "id",
+                    habitList[position].id
+                )
+            )
+        }
+
         runnable = object : Runnable {
             override fun run() {
-                val nextLevel = Levels.getNextLevel(context, System.currentTimeMillis() - habitList[position].startDate!!)
-                val passedTime = (System.currentTimeMillis() - habitList[position].startDate!!).toInt()
+                val nextLevel = Levels.getNextLevel(
+                    context,
+                    System.currentTimeMillis() - habitList[position].startDate!!
+                )
+                val passedTime =
+                    (System.currentTimeMillis() - habitList[position].startDate!!).toInt()
 
                 holder.habitProgress.progress = passedTime / nextLevel
-                holder.habitProgress.bottomText = Levels.getNextLevelIndex(context, nextLevel.toLong())
+                holder.habitProgress.bottomText =
+                    Levels.getNextLevelIndex(context, nextLevel.toLong())
 
-                holder.habitTimer.text = Utils.getRemainingtimeStr(Utils.getRemainingtime(System.currentTimeMillis() - habitList[position].startDate!!))
+                holder.habitTimer.text =
+                    Utils.getRemainingtimeStr(Utils.getRemainingtime(System.currentTimeMillis() - habitList[position].startDate!!))
 
                 handler.postDelayed(this, 1000)
             }
@@ -61,10 +78,14 @@ class HabitAdapter(
         var habitName = itemView.habitName
         var habitProgress = itemView.habitProgress
         var More = itemView.More
+        var cardView = itemView.cardView
     }
 
-    fun removeHandler(){
-        handler.removeCallbacks(runnable)
+    fun removeHandler() {
+        try {
+            handler.removeCallbacks(runnable)
+        } catch (e: Exception) {
+        }
     }
 
 
